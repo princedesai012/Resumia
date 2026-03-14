@@ -1,0 +1,45 @@
+Data Scientist / ML Engineer
+
+Role Overview:
+We are seeking a talented Data Scientist or Machine Learning Engineer to develop data-driven solutions that power our core products. You will work closely with engineering and business teams to design, implement, and deploy machine learning models at scale.
+
+Key Responsibilities:
+- Design and implement machine learning models for classification, regression, NLP, and recommendation tasks
+- Perform exploratory data analysis (EDA) and feature engineering on large datasets
+- Build and maintain data pipelines for model training and real-time inference
+- Evaluate and iterate on models using appropriate metrics and A/B testing
+- Deploy ML models to production using MLOps best practices
+- Collaborate with data engineers to ensure data quality and availability
+
+Required Technical Skills:
+- Programming Languages: Python (primary), R, SQL
+- ML Frameworks: TensorFlow, PyTorch, scikit-learn, XGBoost, LightGBM
+- NLP/LLM: Hugging Face Transformers, LangChain, spaCy, NLTK
+- Data Tools: Pandas, NumPy, Matplotlib, Seaborn, Plotly
+- Big Data: Apache Spark, Hadoop, Hive
+- Vector Databases: FAISS, Pinecone, Weaviate, ChromaDB
+- Cloud ML: AWS SageMaker, Google Vertex AI, Azure ML
+- MLOps: MLflow, DVC, Kubeflow, Weights & Biases
+- Databases: PostgreSQL, BigQuery, Redshift, Snowflake
+
+Preferred/Bonus Skills:
+- Experience with Large Language Models (LLMs) and Generative AI
+- RAG (Retrieval-Augmented Generation) pipelines
+- Reinforcement Learning from Human Feedback (RLHF)
+- Real-time model serving: FastAPI, TorchServe, Triton
+- Statistical analysis and hypothesis testing
+- Time series analysis and forecasting
+
+Soft Skills:
+- Strong mathematical foundation (linear algebra, statistics, probability)
+- Ability to translate business problems into ML solutions
+- Clear communication of complex technical concepts
+- Intellectual curiosity and continuous learning mindset
+
+ATS Keywords (High Priority):
+Python, Machine Learning, Deep Learning, NLP, TensorFlow, PyTorch, scikit-learn, LangChain, FAISS, Transformers, SQL, Pandas, NumPy, A/B Testing, Feature Engineering, Model Deployment, MLOps, RAG, Generative AI, LLM, Data Pipeline, AWS SageMaker, Statistical Analysis
+
+Qualifications:
+- Bachelor's or Master's degree in Computer Science, Statistics, Mathematics, or related field
+- 2+ years of hands-on ML/data science experience
+- Portfolio of projects demonstrating end-to-end ML implementations

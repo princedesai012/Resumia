@@ -1,0 +1,47 @@
+Product Manager – Technology / SaaS
+
+Role Overview:
+We are looking for a dynamic Product Manager to define product vision, strategy, and roadmap for our technology platform. You will be the bridge between business stakeholders, engineering teams, and end-users, leading products from conception to launch and iteration.
+
+Key Responsibilities:
+- Define and communicate product vision, strategy, and roadmap aligned with business goals
+- Gather and prioritize requirements from customers, stakeholders, and market research
+- Write detailed product specifications, user stories, and acceptance criteria
+- Partner with engineering, design, data science, and marketing teams
+- Monitor product KPIs and drive data-informed decisions
+- Manage product backlog and sprint planning in Agile environments
+- Conduct competitive analysis and market research
+- Lead go-to-market planning and product launches
+
+Required Skills:
+- Product Strategy: Roadmapping, prioritization frameworks (RICE, MoSCoW, Kano)
+- Agile/Scrum: Sprint planning, backlog grooming, user story writing, retrospectives
+- Analytics: Defining KPIs, A/B testing, cohort analysis, funnel analysis
+- Tools: JIRA, Confluence, Asana, Notion, Linear, Figma, Miro
+- Data: SQL (basic to intermediate), Google Analytics, Mixpanel, Amplitude
+- Research: User interviews, surveys, usability testing, Jobs-to-be-Done framework
+- Documentation: PRDs (Product Requirements Documents), BRDs, specs
+- Communication: Executive presentations, stakeholder management
+
+Preferred/Bonus Skills:
+- Technical background or experience working with engineering teams
+- API product management experience
+- Experience with AI/ML product development
+- Mobile product management (iOS/Android)
+- B2B/SaaS product experience
+- Experience with customer journey mapping and persona development
+
+Soft Skills:
+- Exceptional communication and influencing skills
+- Strong analytical and critical thinking
+- Empathy for users and deep customer orientation
+- Ability to manage ambiguity and competing priorities
+- Leadership without authority
+
+ATS Keywords (High Priority):
+Product Management, Roadmap, Agile, Scrum, JIRA, User Stories, A/B Testing, KPIs, Stakeholder Management, PRD, Go-to-Market, Competitive Analysis, SQL, Analytics, Figma, Sprint Planning, Product Strategy, SaaS, B2B, Market Research, Customer Discovery
+
+Qualifications:
+- Bachelor's degree in Business, Computer Science, or related field (MBA is a plus)
+- 3+ years of product management experience in a tech company
+- Proven track record of shipping successful products

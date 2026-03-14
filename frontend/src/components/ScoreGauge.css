@@ -1,0 +1,91 @@
+/* ═══════════════════════════════════════════════
+   ScoreGauge Component Styles
+   ═══════════════════════════════════════════════ */
+
+.score-gauge-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 32px 24px;
+}
+
+.score-gauge-svg {
+  filter: drop-shadow(0 0 20px var(--brand-glow));
+}
+
+.score-center-text {
+  text-anchor: middle;
+  dominant-baseline: central;
+  font-family: var(--font-sans);
+}
+
+.score-number {
+  font-size: 42px;
+  font-weight: 800;
+  fill: var(--text-primary);
+  letter-spacing: -2px;
+}
+
+.score-label-svg {
+  font-size: 12px;
+  font-weight: 500;
+  fill: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.score-grade-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.score-dimensions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.dimension-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dimension-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dimension-name {
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.dimension-score {
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+.dimension-bar-track {
+  height: 6px;
+  background: var(--bg-elevated);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.dimension-bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 1s var(--ease-out);
+}

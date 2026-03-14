@@ -1,0 +1,43 @@
+Software Engineer – Full Stack / Backend
+
+Role Overview:
+We are looking for a skilled Software Engineer to design, develop, and maintain scalable web applications and backend services. The ideal candidate possesses a strong understanding of software engineering principles, modern frameworks, and cloud infrastructure.
+
+Key Responsibilities:
+- Design, develop, and deploy scalable web applications and REST APIs
+- Write clean, maintainable, and well-tested code following best practices
+- Collaborate with cross-functional teams including Product, Design, and DevOps
+- Optimize application performance and ensure high availability
+- Participate in code reviews and mentor junior engineers
+- Contribute to architectural decisions and technical roadmaps
+
+Required Technical Skills:
+- Programming Languages: Python, Java, Go, or Node.js (TypeScript/JavaScript)
+- Frameworks: FastAPI, Django, Spring Boot, Express.js, Next.js
+- Databases: PostgreSQL, MySQL, MongoDB, Redis
+- Cloud Platforms: AWS (EC2, S3, Lambda, RDS), GCP, Azure
+- Containerization: Docker, Kubernetes
+- Version Control: Git, GitHub, GitLab
+- CI/CD: Jenkins, GitHub Actions, CircleCI
+- Testing: Unit testing, integration testing, TDD practices
+
+Preferred/Bonus Skills:
+- Microservices architecture and distributed systems design
+- Message queues: RabbitMQ, Apache Kafka
+- GraphQL API design
+- Infrastructure as Code: Terraform, Ansible
+- Monitoring: Prometheus, Grafana, Datadog
+- Experience with Agile/Scrum methodologies
+
+Soft Skills:
+- Strong problem-solving and analytical skills
+- Excellent communication and collaboration
+- Ability to work in a fast-paced environment
+- Self-motivated and proactive
+
+ATS Keywords (High Priority):
+Python, JavaScript, TypeScript, React, Node.js, FastAPI, Django, REST API, GraphQL, PostgreSQL, MongoDB, Redis, Docker, Kubernetes, AWS, GCP, CI/CD, Microservices, Agile, Git, Unit Testing, System Design, Scalability, Performance Optimization
+
+Qualifications:
+- Bachelor's or Master's degree in Computer Science or related field
+- 2-5 years of professional software engineering experience
