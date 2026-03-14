@@ -1,136 +1,373 @@
-# Resumia: Autonomous Career Intelligence Agent
+# 🚀 Resumia — Autonomous Career Intelligence Agent
 
-Resumia is an advanced, AI-powered career intelligence platform that helps candidates optimize their resumes and structure their career growth. It utilizes a powerful 3-agent orchestration pipeline backed by Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG) to provide deep, actionable insights.
-
-## 🚀 Features
-
-Resumia employs a true **Agentic Pipeline** to process resumes. The backend orchestrates three distinct AI agents chronologically to deliver a comprehensive analysis:
-
-1. **ParserAgent (Structural Parsing)**
-   - Extracts structured resume data using LangChain's `FewShotPromptTemplate` for high-precision skill extraction.
-   - Intelligently categorizes keywords, languages, and frameworks.
-
-2. **RAG with FAISS Vector Store**
-   - Semantically retrieves relevant industry Job Description (JD) chunks using the Gemini Text Embedding model (`embedding-001`) and a FAISS vector similarity search.
-   - Provides deep context for the ATS scoring phase.
-
-3. **ATSAgent (ATS Compliance Scoring)**
-   - Scores the candidate's resume against an ATS rubric (5 dimensions) grounded by the retrieved JD context.
-   - Pinpoints critical missing keywords, formatting issues, and structural gaps.
-
-4. **FeedbackAgent (Strategic Career Generation)**
-   - Synthesizes all outputs into a strategic career improvement plan.
-   - Generates a prioritized action list and a structured 30/60/90 day roadmap to land the target role.
-
-### 📝 Supported Formats & Roles
-- **Formats:** PDF, DOCX, DOC, TXT.
-- **Roles out-of-the-box:** `software_engineer`, `data_scientist`, `product_manager`.
+> **AI-Powered Resume Intelligence Platform**
+> Analyze resumes, evaluate ATS compatibility, and generate a **strategic career roadmap** using an **agentic AI pipeline** powered by LLMs and RAG.
 
 ---
 
-## 🛠️ Technology Stack
+## 📊 Project Overview
 
-### Backend
-- **Python Framework:** [FastAPI](https://fastapi.tiangolo.com/)
-- **AI Models:** Google Gemini API (`gemini-2.0-flash` for reasoning, `embedding-001` for RAG)
-- **Agent Orchestration:** [LangChain](https://python.langchain.com/)
-- **Vector Database:** [FAISS](https://faiss.ai/) (Facebook AI Similarity Search)
-- **Document Processing:** `pdfminer.six` for PDFs, `python-docx` for Word documents
+Resumia is an **AI career intelligence system** that analyzes resumes using a **multi-agent architecture**.
 
-### Frontend
-- **Framework:** React 18
-- **Tooling:** Vite
-- **Styling:** CSS / External Design Systems
+Instead of a single AI prompt, it orchestrates **3 specialized AI agents** to perform:
+
+* Resume structure extraction
+* ATS compatibility scoring
+* Strategic career planning
+
+The system combines **LLMs + Retrieval Augmented Generation (RAG)** to deliver **context-aware career insights**.
 
 ---
 
-## ⚙️ Installation & Setup
+## 🧠 Agentic Architecture
 
-### Prerequisites
-- Node.js (v18+)
-- Python (3.9+)
-- A [Google Gemini API Key](https://aistudio.google.com/)
+```mermaid
+sequenceDiagram
+    autonumber
 
-### 1. Clone the repository
-```bash
-git clone https://github.com/yourusername/Resumia.git
-cd Resumia
+    participant U as 🧑 User (React UI)
+    participant API as ⚙️ FastAPI Backend
+    participant P as 🧠 ParserAgent
+    participant V as 📚 FAISS Vector DB
+    participant A as 🎯 ATSAgent
+    participant F as 🚀 FeedbackAgent
+
+    U->>API: Upload Resume + Target Role
+    API->>API: Extract Plain Text
+    API->>P: Send Raw Resume
+    P-->>API: Structured JSON Profile
+    
+    API->>V: Query Extracted Skills
+    V-->>API: Relevant Job Description Context
+    
+    API->>A: Resume + JD Context
+    A-->>API: ATS Score + Rubric Analysis
+    
+    API->>F: Profile + Score + Context
+    F-->>API: 30/60/90 Day Career Roadmap
+    
+    API-->>U: Complete Career Intelligence Report
 ```
 
-### 2. Backend Setup
-Navigate to the `backend` directory and set up your Python environment.
+---
+
+# ⚡ Core Features
+
+| Feature                            | Description                                                    |
+| ---------------------------------- | -------------------------------------------------------------- |
+| 🧠 **Agentic Pipeline**            | 3 specialized AI agents collaborate to analyze resumes         |
+| 📊 **ATS Compatibility Score**     | Evaluate resume using a structured ATS rubric                  |
+| 🔍 **RAG Industry Context**        | Uses FAISS vector search to retrieve relevant job descriptions |
+| 🧭 **Career Strategy Roadmap**     | Generates a 30 / 60 / 90 day career improvement plan           |
+| 📄 **Multi-Format Resume Support** | PDF, DOCX, DOC, TXT                                            |
+| ⚡ **Quick Analysis Mode**          | Fast parsing mode without RAG                                  |
+
+---
+
+# 🤖 AI Agent Breakdown
+
+## 1️⃣ ParserAgent — Resume Intelligence
+
+Extracts structured data from unstructured resume text.
+
+**Responsibilities**
+
+* Skill extraction
+* Technology classification
+* Experience parsing
+* Education detection
+
+**Technique**
+
+```
+FewShotPromptTemplate + Structured JSON output
+```
+
+**Output Example**
+
+```json
+{
+  "skills": ["Python", "FastAPI", "React"],
+  "experience": "2 years",
+  "projects": ["AI Resume Analyzer"]
+}
+```
+
+---
+
+## 2️⃣ ATSAgent — Resume Evaluation
+
+Simulates **Applicant Tracking System scoring**.
+
+### Evaluation Dimensions
+
+| Dimension            | Description                        |
+| -------------------- | ---------------------------------- |
+| Keyword Match        | Resume vs Job Description keywords |
+| Skills Coverage      | Technical skill overlap            |
+| Structure Quality    | Section organization               |
+| Experience Relevance | Alignment with role                |
+| Formatting           | ATS readability                    |
+
+**Output**
+
+```
+ATS Score: 82 / 100
+Missing Keywords: Docker, Kubernetes
+```
+
+---
+
+## 3️⃣ FeedbackAgent — Career Strategy Generator
+
+Transforms the ATS analysis into **actionable career improvements**.
+
+### Generates
+
+* Skill gap analysis
+* Resume improvement suggestions
+* Learning priorities
+* Career roadmap
+
+Example:
+
+```
+30 Days: Learn Docker & improve project descriptions
+60 Days: Add cloud deployment project
+90 Days: Apply to mid-level backend roles
+```
+
+---
+
+# 📚 Retrieval Augmented Generation (RAG)
+
+Resumia improves ATS accuracy using **industry job description context**.
+
+### Process
+
+1️⃣ Resume skills are extracted
+2️⃣ Skills are embedded using **Gemini embedding model**
+3️⃣ Similar job description chunks retrieved from **FAISS**
+4️⃣ ATSAgent evaluates resume using real industry data
+
+```
+Resume Skills → Embedding → FAISS Search → JD Context
+```
+
+---
+
+# 🏗 System Architecture
+
+```mermaid
+graph TD
+
+A[User Upload Resume] --> B[Text Extraction]
+
+B --> C[ParserAgent]
+
+C --> D[Structured Resume JSON]
+
+D --> E[FAISS Vector Search]
+
+E --> F[Industry JD Context]
+
+D --> G[ATSAgent]
+F --> G
+
+G --> H[ATS Score]
+
+H --> I[FeedbackAgent]
+F --> I
+D --> I
+
+I --> J[Career Strategy Roadmap]
+
+J --> K[React UI Results]
+```
+
+---
+
+# 🛠 Technology Stack
+
+## Backend
+
+| Technology  | Purpose                     |
+| ----------- | --------------------------- |
+| FastAPI     | High performance Python API |
+| LangChain   | Agent orchestration         |
+| FAISS       | Vector similarity search    |
+| Gemini API  | LLM reasoning + embeddings  |
+| pdfminer    | PDF text extraction         |
+| python-docx | DOCX processing             |
+
+---
+
+## Frontend
+
+| Technology | Purpose             |
+| ---------- | ------------------- |
+| React 18   | UI Framework        |
+| Vite       | Development tooling |
+| CSS        | Styling             |
+
+---
+
+# ⚙️ Installation
+
+## 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/yourusername/resumia.git
+cd resumIA
+```
+
+---
+
+# Backend Setup
 
 ```bash
 cd backend
+
 python -m venv venv
+```
 
-# On macOS/Linux:
-source venv/bin/activate
-# On Windows:
+### Activate Environment
+
+**Windows**
+
+```
 venv\Scripts\activate
+```
 
+**Mac/Linux**
+
+```
+source venv/bin/activate
+```
+
+Install dependencies
+
+```bash
 pip install -r requirements.txt
 ```
 
-Create a `.env` file in the `backend/` directory:
-```env
-GEMINI_API_KEY=your_gemini_api_key_here
+Create `.env`
+
+```
+GEMINI_API_KEY=your_api_key
 ```
 
-Start the FastAPI server:
+Run server
+
 ```bash
 uvicorn main:app --reload
-# Server will run on http://localhost:8000
 ```
 
-### 3. Frontend Setup
-Open a new terminal and navigate to the `frontend` directory.
+Server runs on
+
+```
+http://localhost:8000
+```
+
+---
+
+# Frontend Setup
 
 ```bash
 cd frontend
+
 npm install
 npm run dev
-# Vite dev server will run on http://localhost:5173
+```
+
+Frontend runs on
+
+```
+http://localhost:5173
 ```
 
 ---
 
-## 📡 API Endpoints
+# 📡 API Endpoints
 
-Resumia exposes several RESTful endpoints from its FastAPI backend:
-
-- `POST /api/analyze`: Main endpoint. Runs the full 3-agent career intelligence pipeline. Requires a file upload (`resume`) and an optional query parameter `job_role`.
-- `POST /api/analyze/quick`: Fast mode. Only runs the ParserAgent for structural extraction (skipping RAG and Feedback generation).
-- `GET /api/roles`: Returns the list of currently supported roles for JD matching.
-- `GET /health`: Comprehensive system health check including memory usage, CPU usage, and FAISS initialization status.
-
----
-
-## 🧠 Architecture Overview
-
-Resumia is designed around an asynchronous pipeline model:
-
-1. **Upload:** User provides a resume via the React interface.
-2. **Extraction:** FastAPI extracts plaintext using format-specific miners (`pdfminer`, `python-docx`).
-3. **Agent 1:** The `ParserAgent` converts unstructured text into a highly structured JSON profile.
-4. **Knowledge Retrieval:** The RAG system embeds the extracted skills and queries the offline FAISS Vector Store to fetch relevant sub-chunks of Industry JDs.
-5. **Agent 2:** The `ATSAgent` evaluates the structured parsed resume against the retrieved JD context to calculate an ATS compatibility score.
-6. **Agent 3:** The `FeedbackAgent` takes the parsed profile, the JD context, and the ATS score to hallucination-free actionable advice.
-7. **Delivery:** The structured response is sent back to the React UI, displaying the roadmap and parsing results to the user.
+| Endpoint             | Method | Description          |
+| -------------------- | ------ | -------------------- |
+| `/api/analyze`       | POST   | Run full AI pipeline |
+| `/api/analyze/quick` | POST   | Resume parsing only  |
+| `/api/roles`         | GET    | Supported job roles  |
+| `/health`            | GET    | System health status |
 
 ---
 
-## 🤝 Contributing
+# 📄 Supported Resume Formats
 
-Contributions are welcome! If you'd like to improve the ATS algorithm, add more supported job roles to the RAG vector store, or enhance the React UI:
-1. Fork the project.
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`).
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4. Push to the branch (`git push origin feature/AmazingFeature`).
-5. Open a Pull Request.
+| Format | Supported |
+| ------ | --------- |
+| PDF    | ✅         |
+| DOCX   | ✅         |
+| DOC    | ✅         |
+| TXT    | ✅         |
 
 ---
 
-## 📄 License
+# 🎯 Supported Roles
 
-Distributed under the MIT License. See `LICENSE` for more information.
+* Software Engineer
+* Data Scientist
+* Product Manager
+
+---
+
+# 🧭 Execution Workflow
+
+1️⃣ User uploads resume
+2️⃣ Backend extracts text
+3️⃣ ParserAgent builds structured profile
+4️⃣ RAG retrieves industry context
+5️⃣ ATSAgent calculates compatibility score
+6️⃣ FeedbackAgent generates improvement roadmap
+7️⃣ Results delivered to React UI
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+Steps:
+
+```
+1. Fork repository
+2. Create feature branch
+3. Commit changes
+4. Push branch
+5. Open Pull Request
+```
+
+---
+
+# 📜 License
+
+MIT License
+
+---
+
+# ⭐ If you like this project
+
+Give it a **star on GitHub** ⭐
+
+---
+
+## 🚀 Why This Version Is Better
+
+Your original was good, but this version improves:
+
+| Improvement                 | Result                             |
+| --------------------------- | ---------------------------------- |
+| Tables instead of long text | Faster readability                 |
+| Clearer hierarchy           | Easier scanning                    |
+| Better Mermaid diagrams     | Cleaner architecture               |
+| Structured sections         | GitHub professional look           |
+| Visual flow                 | More “open-source project quality” |
+
+---
