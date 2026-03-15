@@ -116,19 +116,22 @@ app = FastAPI(
 )
 
 # ── CORS ───────────────────────────────────────────────────────────────────────
+frontend_url = os.getenv("FRONTEND_URL", "*")
+
+allow_origins = ["http://localhost:3000", "http://localhost:5173", "http://127.0.0.1:5173"]
+if frontend_url and frontend_url != "*":
+    allow_origins.append(frontend_url)
+
+if frontend_url == "*":
+    allow_origins = ["*"]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000",
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-        "http://172.20.204.83:3000"
-    ],
-    allow_methods=["GET", "POST"],
+    allow_origins=allow_origins,
+    allow_methods=["*"],
     allow_headers=["*"],
-    allow_credentials=True
+    allow_credentials=(frontend_url != "*")
 )
-
 
 # ══════════════════════════════════════════════════════════════════════════════
 # UTILITY FUNCTIONS
