@@ -118,7 +118,7 @@ app = FastAPI(
 # ── CORS ───────────────────────────────────────────────────────────────────────
 frontend_url = os.getenv("FRONTEND_URL", "*")
 
-allow_origins = ["http://localhost:3000", "http://localhost:5173", "http://127.0.0.1:5173"]
+allow_origins = ["http://localhost:3000", "http://localhost:5173", "http://127.0.0.1:5173", "https://resumia.princedesai.me"]
 if frontend_url and frontend_url != "*":
     allow_origins.append(frontend_url)
 
