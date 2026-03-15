@@ -5,7 +5,8 @@ import SkillsPanel from './components/SkillsPanel'
 import FeedbackPanel from './components/FeedbackPanel'
 import './App.css'
 
-const API_BASE = 'http://localhost:8000'
+// Use the environment variable if available (for production), otherwise fallback to localhost
+const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000'
 
 const TABS = ['Resume Profile', 'ATS Score', 'Strategic Feedback']
 
