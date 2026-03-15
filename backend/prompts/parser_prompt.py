@@ -13,13 +13,14 @@ RULES:
 - Normalize skill names to their canonical form (e.g. "JS" → "JavaScript", "ML" → "Machine Learning").
 - For achievements, preserve quantified metrics EXACTLY as written (e.g. "reduced latency by 40%").
 - Education: extract degree level, field, institution, and graduation year if available.
+- Always include a "projects" array to capture any personal, academic, or professional projects mentioned.
+- In the "contact" section, capture "linkedin", "github", "portfolio", and any "other_links" present in the resume.
 
 Study the following examples carefully before parsing the target resume:"""
 
 PARSER_EXAMPLES = [
     {
-        "resume_snippet": """John Doe | johndoe@gmail.com | linkedin.com/in/johndoe | +1-555-0100 | San Francisco, CA
-
+        "resume_snippet": """John Doe | johndoe@gmail.com | linkedin.com/in/johndoe | +1-555-0100 | San Francisco, CA | johndoe.dev
 SUMMARY
 Full-stack engineer with 4 years of experience building scalable web applications. Passionate about clean code and distributed systems.
 
@@ -40,6 +41,10 @@ Software Engineer | StartupXYZ | Jun 2020 – Dec 2021
 - Built RESTful APIs using FastAPI and PostgreSQL for fintech application
 - Implemented CI/CD pipelines using GitHub Actions, reducing deployment time by 60%
 
+PROJECTS
+E-commerce Platform
+- Built a full-stack e-commerce app using React, Node.js, and MongoDB
+
 EDUCATION
 B.Sc. Computer Science | Stanford University | 2020
 
@@ -51,6 +56,9 @@ AWS Certified Solutions Architect – Associate (2023)""",
     "email": "johndoe@gmail.com",
     "phone": "+1-555-0100",
     "linkedin": "linkedin.com/in/johndoe",
+    "github": "",
+    "portfolio": "johndoe.dev",
+    "other_links": [],
     "location": "San Francisco, CA"
   },
   "summary": "Full-stack engineer with 4 years of experience building scalable web applications. Passionate about clean code and distributed systems.",
@@ -85,6 +93,14 @@ AWS Certified Solutions Architect – Associate (2023)""",
       ]
     }
   ],
+  "projects": [
+    {
+      "name": "E-commerce Platform",
+      "description": "Built a full-stack e-commerce app using React, Node.js, and MongoDB",
+      "technologies": ["React", "Node.js", "MongoDB"],
+      "link": ""
+    }
+  ],
   "education": [
     {
       "degree": "Bachelor of Science",
@@ -116,6 +132,10 @@ Data Scientist | Analytics Corp | Jul 2022 – Present
 Research Intern | IIT Bombay AI Lab | Jan 2022 – Jun 2022
 - Implemented transformer-based text classification using Hugging Face
 
+PROJECTS
+Semantic Search Engine
+- Created a document search engine utilizing FAISS and OpenAI embeddings. Details at myportfolio.io/search
+
 EDUCATION
 M.Sc. Data Science | IIT Bombay | 2022
 B.Sc. Statistics | University of Mumbai | 2020""",
@@ -126,6 +146,8 @@ B.Sc. Statistics | University of Mumbai | 2020""",
     "phone": "",
     "linkedin": "",
     "github": "github.com/priyasharma",
+    "portfolio": "",
+    "other_links": ["myportfolio.io/search"],
     "location": ""
   },
   "summary": "Data Scientist with 2 years of experience in NLP and predictive modeling seeking ML Engineer role.",
@@ -157,6 +179,14 @@ B.Sc. Statistics | University of Mumbai | 2020""",
       "achievements": [
         "Implemented transformer-based text classification using Hugging Face"
       ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Semantic Search Engine",
+      "description": "Created a document search engine utilizing FAISS and OpenAI embeddings. Details at myportfolio.io/search",
+      "technologies": ["FAISS", "OpenAI"],
+      "link": "myportfolio.io/search"
     }
   ],
   "education": [
@@ -193,6 +223,9 @@ Got a degree from NYU in CS.""",
     "email": "alex.rivera@email.com",
     "phone": "",
     "linkedin": "",
+    "github": "",
+    "portfolio": "",
+    "other_links": [],
     "location": "New York, NY"
   },
   "summary": "",
@@ -212,6 +245,7 @@ Got a degree from NYU in CS.""",
       "achievements": []
     }
   ],
+  "projects": [],
   "education": [
     {
       "degree": "Bachelor's",
